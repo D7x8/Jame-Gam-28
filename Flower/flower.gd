@@ -6,4 +6,4 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	scale.y += 0.0005
+	scale.y += 0.00009
