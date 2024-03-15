@@ -1,8 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://cityhmurcx2b8"]
+[gd_scene load_steps=11 format=3 uid="uid://cityhmurcx2b8"]
 
 [ext_resource type="PackedScene" uid="uid://da6p7xugiti5x" path="res://player.tscn" id="1_f4pid"]
+[ext_resource type="Material" uid="uid://bb43ngplsfis2" path="res://addons/flexible_toon_shader/FlexibleToonMaterial.tres" id="2_g7k4f"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_cblll"]
+material = ExtResource("2_g7k4f")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kjgbi"]
 size = Vector3(1, 0.013916, 1)
@@ -25,6 +27,7 @@ glow_enabled = true
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_iti21"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_78u6r"]
+material = ExtResource("2_g7k4f")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qj8ow"]
 size = Vector3(1, 6.65332, 1)
@@ -32,9 +35,10 @@ size = Vector3(1, 6.65332, 1)
 [node name="Main" type="Node3D"]
 
 [node name="Player" parent="." instance=ExtResource("1_f4pid")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.25268, 0)
 
 [node name="Ground" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0)
+metadata/_edit_group_ = true
 
 [node name="Mesh" type="MeshInstance3D" parent="Ground"]
 transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 0, 0, 0)
@@ -52,7 +56,8 @@ environment = SubResource("Environment_o5a6t")
 camera_attributes = SubResource("CameraAttributesPractical_iti21")
 
 [node name="Flower" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.84644, -9.79115)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.97469, -9.79115)
+metadata/_edit_group_ = true
 
 [node name="Mesh" type="MeshInstance3D" parent="Flower"]
 transform = Transform3D(3, 0, 0, 0, 20, 0, 0, 0, 3, 0, 0, 0)
