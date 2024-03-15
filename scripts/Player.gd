@@ -8,11 +8,16 @@ const JUMP_VELOCITY = 4.5
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
+# Is running
 var running := false
 
-# Get the player camera
+# Get nodes
 @onready var main_camera := $Camera
 @onready var interact_ray := $Camera/Ray
+@onready var ground_node := $"../Ground"
+
+# Preload scenes to spawn
+var test_tower = preload("res://scenes/test_tower.tscn")
 
 # Make the camera variables
 var camera_rotation := Vector2(0, 0)
@@ -62,7 +67,8 @@ func _physics_process(delta):
 	
 	# Interact with objects
 	if Input.is_action_just_pressed("interact") and interact_ray.is_colliding():
-		var _interacted_object: Object = interact_ray.get_collider()
+		var interacted_object: Object = interact_ray.get_collider()
+		if interacted_object is 
 	
 	# Get the input direction and handle the movement/deceleration
 	var input_dir = Input.get_vector("left", "right", "forward", "backward")

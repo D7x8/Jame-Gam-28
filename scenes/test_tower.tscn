@@ -5,7 +5,7 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_a5n4v"]
 
 [node name="TestTower" type="StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.45209, 6.8301)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 metadata/_edit_group_ = true
 
 [node name="Mesh" type="MeshInstance3D" parent="."]
