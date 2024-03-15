@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://da6p7xugiti5x"]
+[gd_scene load_steps=7 format=3 uid="uid://da6p7xugiti5x"]
 
 [ext_resource type="Script" path="res://scripts/Player.gd" id="1_plm0u"]
 [ext_resource type="Material" uid="uid://bb43ngplsfis2" path="res://addons/flexible_toon_shader/FlexibleToonMaterial.tres" id="2_fjjb6"]
+[ext_resource type="Script" path="res://scripts/Camera.gd" id="3_37b05"]
+[ext_resource type="Script" path="res://scripts/Ray.gd" id="4_jwg7r"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ioq6e"]
 
@@ -19,6 +21,8 @@ mesh = SubResource("CapsuleMesh_c2rp7")
 
 [node name="Camera" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
+script = ExtResource("3_37b05")
 
 [node name="Ray" type="RayCast3D" parent="Camera"]
 target_position = Vector3(0, 0, -3)
+script = ExtResource("4_jwg7r")
