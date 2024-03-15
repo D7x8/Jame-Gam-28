@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cityhmurcx2b8"]
+[gd_scene load_steps=12 format=3 uid="uid://b4x83u2640j26"]
 
 [ext_resource type="PackedScene" uid="uid://da6p7xugiti5x" path="res://scenes/player.tscn" id="1_oicmh"]
 [ext_resource type="Material" uid="uid://bb43ngplsfis2" path="res://addons/flexible_toon_shader/FlexibleToonMaterial.tres" id="2_lvjju"]
