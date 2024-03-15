@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://b4x83u2640j26"]
+[gd_scene load_steps=11 format=3 uid="uid://b4x83u2640j26"]
 
 [ext_resource type="PackedScene" uid="uid://da6p7xugiti5x" path="res://scenes/player.tscn" id="1_oicmh"]
 [ext_resource type="Material" uid="uid://bb43ngplsfis2" path="res://addons/flexible_toon_shader/FlexibleToonMaterial.tres" id="2_lvjju"]
+[ext_resource type="PackedScene" uid="uid://c2livv8pre4wn" path="res://Flower/flower.tscn" id="3_3vo6f"]
 [ext_resource type="PackedScene" uid="uid://b5cllyobt01b6" path="res://scenes/test_tower.tscn" id="3_4yqrl"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_cblll"]
@@ -25,16 +26,10 @@ ssao_enabled = true
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_iti21"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_78u6r"]
-material = ExtResource("2_lvjju")
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_qj8ow"]
-size = Vector3(1, 6.65332, 1)
-
 [node name="Main" type="Node3D"]
 
 [node name="Player" parent="." instance=ExtResource("1_oicmh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.25268, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.49203, 2.25268, 0)
 
 [node name="Ground" type="StaticBody3D" parent="."]
 metadata/_edit_group_ = true
@@ -54,16 +49,6 @@ transform = Transform3D(0.735874, 0.652298, -0.181651, -0.0107583, 0.2795, 0.960
 environment = SubResource("Environment_o5a6t")
 camera_attributes = SubResource("CameraAttributesPractical_iti21")
 
-[node name="Flower" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.97469, -9.79115)
-metadata/_edit_group_ = true
-
-[node name="Mesh" type="MeshInstance3D" parent="Flower"]
-transform = Transform3D(3, 0, 0, 0, 20, 0, 0, 0, 3, 0, 0, 0)
-mesh = SubResource("BoxMesh_78u6r")
-
-[node name="Collider" type="CollisionShape3D" parent="Flower"]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
-shape = SubResource("BoxShape3D_qj8ow")
+[node name="Flower" parent="." instance=ExtResource("3_3vo6f")]
 
 [node name="TestTower" parent="." instance=ExtResource("3_4yqrl")]
