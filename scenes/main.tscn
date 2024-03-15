@@ -1,9 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://b4x83u2640j26"]
+[gd_scene load_steps=10 format=3 uid="uid://b4x83u2640j26"]
 
 [ext_resource type="PackedScene" uid="uid://da6p7xugiti5x" path="res://scenes/player.tscn" id="1_oicmh"]
 [ext_resource type="Material" uid="uid://bb43ngplsfis2" path="res://addons/flexible_toon_shader/FlexibleToonMaterial.tres" id="2_lvjju"]
 [ext_resource type="PackedScene" uid="uid://c2livv8pre4wn" path="res://Flower/flower.tscn" id="3_3vo6f"]
-[ext_resource type="PackedScene" uid="uid://b5cllyobt01b6" path="res://scenes/test_tower.tscn" id="3_4yqrl"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_cblll"]
 material = ExtResource("2_lvjju")
@@ -50,5 +49,4 @@ environment = SubResource("Environment_o5a6t")
 camera_attributes = SubResource("CameraAttributesPractical_iti21")
 
 [node name="Flower" parent="." instance=ExtResource("3_3vo6f")]
-
-[node name="TestTower" parent="." instance=ExtResource("3_4yqrl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.122, 0, 0)
