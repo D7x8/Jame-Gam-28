@@ -1,0 +1,63 @@
+[gd_scene load_steps=10 format=3 uid="uid://cityhmurcx2b8"]
+
+[ext_resource type="PackedScene" uid="uid://da6p7xugiti5x" path="res://player.tscn" id="1_f4pid"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_cblll"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kjgbi"]
+size = Vector3(1, 0.013916, 1)
+
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_v6n4g"]
+
+[sub_resource type="Sky" id="Sky_1fhod"]
+sky_material = SubResource("PhysicalSkyMaterial_v6n4g")
+
+[sub_resource type="Environment" id="Environment_o5a6t"]
+background_mode = 2
+sky = SubResource("Sky_1fhod")
+ambient_light_source = 3
+reflected_light_source = 2
+ssr_enabled = true
+ssao_enabled = true
+ssil_enabled = true
+glow_enabled = true
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_iti21"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_78u6r"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qj8ow"]
+size = Vector3(1, 6.65332, 1)
+
+[node name="Main" type="Node3D"]
+
+[node name="Player" parent="." instance=ExtResource("1_f4pid")]
+
+[node name="Ground" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="Ground"]
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 0, 0, 0)
+mesh = SubResource("PlaneMesh_cblll")
+
+[node name="Collider" type="CollisionShape3D" parent="Ground"]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, -0.651882, 0)
+shape = SubResource("BoxShape3D_kjgbi")
+
+[node name="Sun" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.735874, 0.652298, -0.181651, -0.0107583, 0.2795, 0.960085, 0.677033, -0.704548, 0.212695, 0, 11.276, 11.2696)
+
+[node name="Environment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_o5a6t")
+camera_attributes = SubResource("CameraAttributesPractical_iti21")
+
+[node name="Flower" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.84644, -9.79115)
+
+[node name="Mesh" type="MeshInstance3D" parent="Flower"]
+transform = Transform3D(3, 0, 0, 0, 20, 0, 0, 0, 3, 0, 0, 0)
+mesh = SubResource("BoxMesh_78u6r")
+
+[node name="Collider" type="CollisionShape3D" parent="Flower"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+shape = SubResource("BoxShape3D_qj8ow")
