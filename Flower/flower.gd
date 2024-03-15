@@ -1,5 +1,7 @@
 extends StaticBody3D
 
+@onready var head = $Head
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	scale = Vector3(1, 1, 1)
@@ -10,3 +12,4 @@ func _process(_delta):
 
 func _grow(amount: float):
 	scale.y += amount
+	head.position.y += amount
