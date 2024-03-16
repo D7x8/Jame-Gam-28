@@ -19,8 +19,6 @@ func _physics_process(_delta) -> void:
 		var interacted_object: Object = get_collider()
 		if interacted_object == ground_node:
 			var new_tower: StaticBody3D = test_tower.instantiate()
-			print(new_tower)
+			ground_node.add_child(new_tower)
 			new_tower.global_position = get_collision_point()
 			new_tower.rotation.y = player.rotation.y
-			ground_node.add_child(new_tower)
-			print(ground_node.get_children())
